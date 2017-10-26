@@ -1,0 +1,159 @@
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_textView_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorWhite" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_textView_weatherCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/rowListView_textView_date" />
+
+    <ImageView
+        android:id="@+id/rowListView_simpleDraweeView_weatherConditionIcon"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_persianTextView_morningTempratureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/rowListView_textView_weatherCondition"
+        android:text="@string/MorningTempratureLable" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_textView_morningTemprature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:layout_below="@+id/rowListView_textView_weatherCondition"
+        android:layout_toEndOf="@+id/rowListView_persianTextView_morningTempratureLabel" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_PersianTextView_dayTempratureLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="@color/colorWhite"
+        android:text="@string/DayTempratureLable"
+        android:layout_below="@+id/rowListView_persianTextView_morningTempratureLabel"/>
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_textView_dayTemprature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:layout_below="@+id/rowListView_textView_morningTemprature"
+        android:layout_toEndOf="@+id/rowListView_PersianTextView_dayTempratureLable" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_persianTextView_eveningTempratureLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:text="@string/EveningTempratureLable"
+        android:layout_below="@+id/rowListView_PersianTextView_dayTempratureLable" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_textView_eveningTemprature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:layout_below="@+id/rowListView_textView_dayTemprature"
+        android:layout_toEndOf="@+id/rowListView_persianTextView_eveningTempratureLable"/>
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_persianTextView_nightTempratureLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NightTempratureLable"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:layout_below="@+id/rowListView_persianTextView_eveningTempratureLable" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/rowListView_textView_nightTemprature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:layout_below="@+id/rowListView_textView_eveningTemprature"
+        android:layout_toEndOf="@+id/rowListView_persianTextView_nightTempratureLable" />
+
+    <include
+        layout="@layout/layout_info_box"
+        android:id="@+id/rowListView_layout_dailyTempratureRange"
+        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/rowListView_textView_nightTemprature"
+        android:layout_alignParentStart="true" />
+
+    <include
+        layout="@layout/layout_info_box"
+        android:id="@+id/rowListView_layout_cloudinessPercent"
+        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/rowListView_textView_nightTemprature"
+        android:layout_alignParentEnd="true" />
+
+    <include
+        layout="@layout/layout_info_box"
+        android:id="@+id/rowListView_layout_atmosphericPressure"
+        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/rowListView_layout_cloudinessPercent"
+        android:layout_alignParentStart="true" />
+
+    <include
+        layout="@layout/layout_info_box"
+        android:id="@+id/rowListView_layout_humidityPercent"
+        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/rowListView_layout_cloudinessPercent"
+        android:layout_alignParentEnd="true" />
+
+    <include
+        layout="@layout/layout_info_box"
+        android:id="@+id/rowListView_layout_windSpeed"
+        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/rowListView_layout_humidityPercent"
+        android:layout_alignParentStart="true" />
+
+    <include
+        layout="@layout/layout_info_box"
+        android:id="@+id/rowListView_layout_windDirection"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/rowListView_layout_humidityPercent"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

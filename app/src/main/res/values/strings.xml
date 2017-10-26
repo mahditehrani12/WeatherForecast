@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="app_name">Weather Forecast</string>
+    <string name="windDirection"> جهت وزش باد </string>
+    <string name="windSpeed"> سرعت وزش باد </string>
+    <string name="humidityPercent"> میزان رطوبت </string>
+    <string name="atmosphericPressure"> فشار هوا </string>
+    <string name="cloudinessPercent"> میزان ابری بودن </string>
+    <string name="dailyTempratureRange"> بازه روزانه دما </string>
+
+    <string name="noNetworkWarning"> اخظار : شما به اینترنت متصل نیستید ! </string>
+    <string name="noNetworkWarningButtonText"> بررسی تنظیمات </string>
+
+    <string name="MorningTempratureLable"> دمای صبح :  </string>
+    <string name="DayTempratureLable"> دمای ظهر :  </string>
+    <string name="EveningTempratureLable"> دمای عصر :  </string>
+    <string name="NightTempratureLable"> دمای شب :  </string>
+
+    <string name="degree"> درجه </string>
+
+</resources>

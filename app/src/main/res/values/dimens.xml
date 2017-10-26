@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="cornerRadius_infoBox">4dp</dimen>
+    <dimen name="padding_InfoBox">8dp</dimen>
+    <dimen name="strokeWidth_infoBox">2dp</dimen>
+
+</resources>

@@ -1,0 +1,37 @@
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ir.mahdiha.weatherforecast.app.NoNetworkActivity" >
+
+    <ImageView
+        android:id="@+id/activityNoNetwork_imageView_warning"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/warningicon"
+        android:layout_centerInParent="true" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityNoNetwork_persianTextView_warning"
+        android:layout_below="@+id/activityNoNetwork_imageView_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_centerInParent="true"
+        android:text="@string/noNetworkWarning"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/activityNoNetwork_button_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activityNoNetwork_persianTextView_warning"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:text="@string/noNetworkWarningButtonText"
+        android:textSize="18sp" />
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<android.support.v4.widget.SwipeRefreshLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activityForecast_swipeRefreshLayout_swipeRefreshLayout"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent" >
+
+    <ListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/activityForecast_listView_forecastList"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@drawable/background_forecast_listview" />
+
+</android.support.v4.widget.SwipeRefreshLayout>
