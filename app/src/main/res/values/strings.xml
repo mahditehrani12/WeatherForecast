@@ -8,14 +8,17 @@
     <string name="cloudinessPercent"> میزان ابری بودن </string>
     <string name="dailyTempratureRange"> بازه روزانه دما </string>
 
-    <string name="noNetworkWarning"> اخظار : شما به اینترنت متصل نیستید ! </string>
+    <string name="noNetworkWarning"> اخطار : شما به اینترنت متصل نیستید ! </string>
     <string name="noNetworkWarningButtonText"> بررسی تنظیمات </string>
+    <string name="noNetworkRetryButtonText"> تلاش مجدد </string>
 
-    <string name="MorningTempratureLable"> دمای صبح :  </string>
-    <string name="DayTempratureLable"> دمای ظهر :  </string>
-    <string name="EveningTempratureLable"> دمای عصر :  </string>
-    <string name="NightTempratureLable"> دمای شب :  </string>
+    <string name="MorningTempratureLable"> صبح </string>
+    <string name="DayTempratureLable"> ظهر </string>
+    <string name="EveningTempratureLable"> عصر </string>
+    <string name="NightTempratureLable"> شب </string>
 
     <string name="degree"> درجه </string>
+    <string name="day"> روز </string>
+    <string name="testNum"> 31 </string>
 
 </resources>

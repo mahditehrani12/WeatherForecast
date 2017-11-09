@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="cornerRadius_infoBox">4dp</dimen>
+    <dimen name="cornerRadius_infoBox">10dp</dimen>
     <dimen name="padding_InfoBox">8dp</dimen>
     <dimen name="strokeWidth_infoBox">2dp</dimen>
+    <dimen name="buttonMargin_activityNoNetwork">15dp</dimen>
 
 </resources>

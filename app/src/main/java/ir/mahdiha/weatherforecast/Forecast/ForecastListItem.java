@@ -11,14 +11,14 @@ public class ForecastListItem
     private String eveningTemprature;
     private String nightTemprature;
 
-    private int minDailyTemprature;
-    private int maxDailyTemprature;
+    private String minDailyTemprature;
+    private String maxDailyTemprature;
 
-    private int cloudinessPercent;
-    private int atmosphericPressure;
-    private int humidityPercent;
-    private float windSpeed;
-    private int windDirection;
+    private String cloudinessPercent;
+    private String atmosphericPressure;
+    private String humidityPercent;
+    private String windSpeed;
+    private String windDirection;
 
     public String getData()
     {
@@ -87,72 +87,72 @@ public class ForecastListItem
         this.nightTemprature = nightTemprature;
     }
 
-    public int getMinDailyTemprature()
+    public String getMinDailyTemprature()
     {
         return minDailyTemprature;
     }
 
-    public void setMinDailyTemprature(int minDailyTemprature)
+    public void setMinDailyTemprature(String minDailyTemprature)
     {
         this.minDailyTemprature = minDailyTemprature;
     }
 
-    public int getMaxDailyTemprature()
+    public String getMaxDailyTemprature()
     {
         return maxDailyTemprature;
     }
 
-    public void setMaxDailyTemprature(int maxDailyTemprature)
+    public void setMaxDailyTemprature(String maxDailyTemprature)
     {
         this.maxDailyTemprature = maxDailyTemprature;
     }
 
-    public int getCloudinessPercent()
+    public String getCloudinessPercent()
     {
         return cloudinessPercent;
     }
 
-    public void setCloudinessPercent(int cloudinessPercent)
+    public void setCloudinessPercent(String cloudinessPercent)
     {
         this.cloudinessPercent = cloudinessPercent;
     }
 
-    public int getAtmosphericPressure()
+    public String getAtmosphericPressure()
     {
         return atmosphericPressure;
     }
 
-    public void setAtmosphericPressure(int atmosphericPressure)
+    public void setAtmosphericPressure(String atmosphericPressure)
     {
         this.atmosphericPressure = atmosphericPressure;
     }
 
-    public int getHumidityPercent()
+    public String getHumidityPercent()
     {
         return humidityPercent;
     }
 
-    public void setHumidityPercent(int humidityPercent)
+    public void setHumidityPercent(String humidityPercent)
     {
         this.humidityPercent = humidityPercent;
     }
 
-    public float getWindSpeed()
+    public String getWindSpeed()
     {
         return windSpeed;
     }
 
-    public void setWindSpeed(float windSpeed)
+    public void setWindSpeed(String windSpeed)
     {
         this.windSpeed = windSpeed;
     }
 
-    public int getWindDirection()
+    public String getWindDirection()
     {
         return windDirection;
     }
 
-    public void setWindDirection(int windDirection)
+    public void setWindDirection(String windDirection)
     {
         this.windDirection = windDirection;
     }

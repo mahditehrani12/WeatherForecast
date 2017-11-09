@@ -9,4 +9,5 @@
     <color name="colorBlack">#000000</color>
     <color name="stroke_background_info_box">#000c4c</color>
     <color name="colorSwipeRefresh">#ee373f</color>
+    <color name="colorSplashBackground">#171717</color>
 </resources>

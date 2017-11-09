@@ -19,7 +19,9 @@ import ir.mahdiha.weatherforecast.Forecast.entity.ApiResponse;
 import ir.mahdiha.weatherforecast.Forecast.entity.List;
 import ir.mahdiha.weatherforecast.R;
 import ir.mahdiha.weatherforecast.app.App;
+import ir.mahdiha.weatherforecast.helper.ConvertDateHelper;
 import ir.mahdiha.weatherforecast.helper.HelperFunctions;
+import ir.mahdiha.weatherforecast.helper.ScreenSizeUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,9 +31,11 @@ public class ForecastActivity extends AppCompatActivity
 {
 
     private static final String TAG_DEBUG = ForecastActivity.class.getSimpleName();
+
     private ListView mForecastListListView;
     private ForecastListAdapter mForecastListAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
+
     private String getMorn;
     private String getDay;
     private String getEve;
@@ -120,8 +124,10 @@ public class ForecastActivity extends AppCompatActivity
                         Log.i(TAG_DEBUG , "Application Is In For loop");
                         ForecastListItem Item1 = new ForecastListItem();
 
-                        Item1.setData(HelperFunctions.convertDateToPersian(HelperFunctions.convertEpochToHumanReadableDate(listItem.getDt())));
+                        Item1.setData(HelperFunctions.convertDateToPersian(ConvertDateHelper.getCurrentShamsidate(HelperFunctions.convertEpochToHumanReadableDate(listItem.getDt()))));
                         Item1.setWeatherCondition(listItem.getWeather().get(0).getDescription());
+
+                        Log.e(TAG_DEBUG , ConvertDateHelper.getCurrentShamsidate());
 
                         if ( Objects.equals ( listItem.getWeather().get(0).getDescription() , "آسمان صاف" ))
                         { Item1.setWeatherConditionIcon(R.drawable.sunicon); }
@@ -129,6 +135,17 @@ public class ForecastActivity extends AppCompatActivity
                         { Item1.setWeatherConditionIcon(R.drawable.cloudicon); }
                         else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "بارش باران" ))
                         { Item1.setWeatherConditionIcon(R.drawable.rainicon); }
+                        else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "پوشیده از ابر" ))
+                        { Item1.setWeatherConditionIcon(R.drawable.cloudy);}
+                        else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "بارش خیلی شدید باران"))
+                        { Item1.setWeatherConditionIcon(R.drawable.raininghigh);}
+                        else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "کمی ابری"))
+                        { Item1.setWeatherConditionIcon(R.drawable.lowcloudicon); }
+                        else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "ابرهای پارچه پارچه شده"))
+                        { Item1.setWeatherConditionIcon(R.drawable.onedriveicon); }
+                        else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "ابرهای پراکنده"))
+                        { Item1.setWeatherConditionIcon(R.drawable.onedriveicon); }
+
 
                         getMorn = String.valueOf(listItem.getTemp().getMorn());
                         getDay = String.valueOf(listItem.getTemp().getDay());
@@ -140,14 +157,24 @@ public class ForecastActivity extends AppCompatActivity
                         Item1.setEveningTemprature(" " + HelperFunctions.convertDateToPersian(getEve) + " " + getResources().getString(R.string.degree));
                         Item1.setNightTemprature(" " + HelperFunctions.convertDateToPersian(getNight) + " " + getResources().getString(R.string.degree));
 
-                        Item1.setMinDailyTemprature((int) listItem.getTemp().getMin());
-                        Item1.setMaxDailyTemprature((int) listItem.getTemp().getMax());
+                        Item1.setMinDailyTemprature(HelperFunctions.convertDateToPersian(String.valueOf ((int) listItem.getTemp().getMin())));
+                        Item1.setMaxDailyTemprature(HelperFunctions.convertDateToPersian(String.valueOf ((int) listItem.getTemp().getMax())));
 
-                        Item1.setCloudinessPercent(listItem.getClouds());
-                        Item1.setAtmosphericPressure((int) listItem.getPressure());
-                        Item1.setHumidityPercent(listItem.getHumidity());
-                        Item1.setWindSpeed((int) listItem.getSpeed());
-                        Item1.setWindDirection(listItem.getDeg());
+                        Item1.setCloudinessPercent(HelperFunctions.convertDateToPersian(String.valueOf(listItem.getClouds()) + " % " ));
+                        Item1.setHumidityPercent(HelperFunctions.convertDateToPersian(String.valueOf(listItem.getHumidity()) + " % " ));
+                        Item1.setWindDirection(HelperFunctions.convertDateToPersian( String.valueOf(listItem.getDeg()) + " درجه " ));
+
+                        Item1.setAtmosphericPressure(HelperFunctions.convertDateToPersian ( String.valueOf ((int) listItem.getPressure()) + " hPa " ));
+                        Item1.setWindSpeed(HelperFunctions.convertDateToPersian( String.valueOf ((int) listItem.getSpeed()) + " m/s " ));
+
+                        ScreenSizeUtils mScreenUtils = new ScreenSizeUtils(ForecastActivity.this);
+                        String DensityDPI = mScreenUtils.GET_widthxheight_dp();
+                        Log.e(TAG_DEBUG , DensityDPI );
+                        String DensityPX = mScreenUtils.GET_widthxheight_px();
+                        Log.e(TAG_DEBUG , DensityPX);
+
+                        String ScreenDensity = ScreenSizeUtils.getDensityName(ForecastActivity.this);
+                        Log.e(TAG_DEBUG , ScreenDensity );
 
                         mForecastListItems.add(Item1);
                         Log.i(TAG_DEBUG , " Response Get Successfully ");

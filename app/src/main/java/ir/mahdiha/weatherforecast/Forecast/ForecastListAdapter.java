@@ -1,6 +1,5 @@
 package ir.mahdiha.weatherforecast.Forecast;
 
-import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -61,10 +58,34 @@ public class ForecastListAdapter extends BaseAdapter
         TextView dateTV = convertView.findViewById(R.id.rowListView_textView_date);
         TextView weatherConditionTV = convertView.findViewById(R.id.rowListView_textView_weatherCondition);
         ImageView weatherConditionIM = convertView.findViewById(R.id.rowListView_simpleDraweeView_weatherConditionIcon);
-        TextView morningTempratureTV = convertView.findViewById(R.id.rowListView_textView_morningTemprature);
-        TextView dayTempratureTV = convertView.findViewById(R.id.rowListView_textView_dayTemprature);
-        TextView eveningTempratureTV = convertView.findViewById(R.id.rowListView_textView_eveningTemprature);
-        TextView nightTempratureTV = convertView.findViewById(R.id.rowListView_textView_nightTemprature);
+
+        View morningTemperatureAxisPointLayout = convertView.findViewById(R.id.rowListView_layout_morningTemperature);
+        TextView morningTemperatureLabelTextView = morningTemperatureAxisPointLayout.findViewById(R.id.layoutTempAxisPoint_textView_title);
+        TextView morningTemperatureValueTextView = morningTemperatureAxisPointLayout.findViewById(R.id.layoutTempAxisPoint_textView_value);
+
+        morningTemperatureLabelTextView.setText(R.string.MorningTempratureLable);
+        morningTemperatureValueTextView.setText(String.valueOf(Item.getMorningTemprature()));
+
+        View dayTemperatureAxisPointLayout = convertView.findViewById(R.id.rowListView_layout_dayTemperature);
+        TextView dayTemperatureLabelTextView = dayTemperatureAxisPointLayout.findViewById(R.id.layoutTempAxisPoint_textView_title);
+        TextView dayTemperatureValueTextView = dayTemperatureAxisPointLayout.findViewById(R.id.layoutTempAxisPoint_textView_value);
+
+        dayTemperatureLabelTextView.setText(R.string.DayTempratureLable);
+        dayTemperatureValueTextView.setText(String.valueOf(Item.getDayTemprature()));
+
+        View eveningTemperatureAxisPointLayout = convertView.findViewById(R.id.rowListView_layout_eveningTemperature);
+        TextView eveningTemperatureLabelTextView = eveningTemperatureAxisPointLayout.findViewById(R.id.layoutTempAxisPoint_textView_title);
+        TextView eveningTemperatureValueTextView = eveningTemperatureAxisPointLayout.findViewById(R.id.layoutTempAxisPoint_textView_value);
+
+        eveningTemperatureLabelTextView.setText(R.string.EveningTempratureLable);
+        eveningTemperatureValueTextView.setText(String.valueOf(Item.getEveningTemprature()));
+
+        View nightTemperatureAxisPointLayout = convertView.findViewById(R.id.rowListView_layout_nightTemperature);
+        TextView nightTemperatureLabelTextView = nightTemperatureAxisPointLayout.findViewById(R.id.layoutTempAxisPoint_textView_title);
+        TextView nightTemperatureValueTextView = nightTemperatureAxisPointLayout.findViewById(R.id.layoutTempAxisPoint_textView_value);
+
+        nightTemperatureLabelTextView.setText(R.string.NightTempratureLable);
+        nightTemperatureValueTextView.setText(String.valueOf(Item.getNightTemprature()));
 
         View dailyTempratureRangeInfoBoxLayout = convertView.findViewById(R.id.rowListView_layout_dailyTempratureRange);
         TextView dailyTempratureRangeTitleTV = dailyTempratureRangeInfoBoxLayout.findViewById(R.id.layoutInfoBox_textView_title);
@@ -94,13 +115,6 @@ public class ForecastListAdapter extends BaseAdapter
         dateTV.setText(Item.getData());
         weatherConditionTV.setText(Item.getWeatherCondition());
         weatherConditionIM.setImageResource(Item.getWeatherConditionIcon());
-
-
-        morningTempratureTV.setText(String.valueOf(Item.getMorningTemprature()));
-        dayTempratureTV.setText(String.valueOf(Item.getDayTemprature()));
-        eveningTempratureTV.setText(String.valueOf(Item.getEveningTemprature()));
-        nightTempratureTV.setText(String.valueOf(Item.getNightTemprature()));
-
 
         dailyTempratureRangeTitleTV.setText(R.string.dailyTempratureRange);
         dailyTempratureRangeValueTV.setText(String.valueOf(Item.getMinDailyTemprature())+ " - " + String.valueOf(Item.getMaxDailyTemprature()));

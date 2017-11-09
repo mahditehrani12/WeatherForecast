@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="XeiLocaledView">
+
+        <attr name="locale" format="enum" >
+
+            <enum name="auto" value="0" />
+            <enum name="en_US" value="1" />
+            <enum name="fa_IR" value="2" />
+            <enum name="hybrid" value="3" />
+
+        </attr>
+
+        <attr name="style">
+
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+
+        </attr>
+
+    </declare-styleable>
+
+</resources>
