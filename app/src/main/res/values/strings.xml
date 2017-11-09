@@ -21,4 +21,6 @@
     <string name="day"> روز </string>
     <string name="testNum"> 31 </string>
 
+    <string name="action_about"> About Application </string>
+
 </resources>

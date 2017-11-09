@@ -7,7 +7,10 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -49,7 +52,10 @@ public class ForecastActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forecast);
 
-        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activityForecast_swipeRefreshLayout_swipeRefreshLayout);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.activityForecast_ToolBar_toolbar);
+        setSupportActionBar(toolbar);
+
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activityContentMain_swipeRefreshLayout_swipeRefreshLayout);
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorSwipeRefresh));
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -94,6 +100,26 @@ public class ForecastActivity extends AppCompatActivity
     private void findViews()
     {
         mForecastListListView = (ListView) findViewById(R.id.activityForecast_listView_forecastList);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+
+        if (id == R.id.action_about)
+        {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void initListView()
