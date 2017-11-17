@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import ir.mahdiha.weatherforecast.Forecast.ForecastActivity;
 import ir.mahdiha.weatherforecast.R;
 import ir.mahdiha.weatherforecast.helper.HelperFunctions;
 
@@ -19,6 +21,8 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
 
     private Button mRetryButton;
     private Button mCheckSettingsButton;
+    private Button mAboutButton;
+    private Button mExitButton;
 
     private String mStarterName;
 
@@ -34,6 +38,9 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_no_network);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.activityNoNetwork_ToolBar_toolbar);
+        setSupportActionBar(toolbar);
 
         mStarterName = getIntent().getStringExtra(KEY_EXTRA_STARTER_NAME);
 
@@ -58,12 +65,16 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
     {
         mRetryButton = (Button) findViewById(R.id.activityNoNetwork_button_retry);
         mCheckSettingsButton = (Button) findViewById(R.id.activityNoNetwork_button_warning);
+        mAboutButton = (Button) findViewById(R.id.activityNoNetwork_button_about);
+        mExitButton = (Button) findViewById(R.id.activityNoNetwork_button_exit);
     }
 
     private void setOnClickListeners()
     {
         mRetryButton.setOnClickListener(this);
         mCheckSettingsButton.setOnClickListener(this);
+        mAboutButton.setOnClickListener(this);
+        mExitButton.setOnClickListener(this);
     }
 
     private void openNetworkSetting()
@@ -85,6 +96,12 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+
+    public void aboutActivityIntent()
+    {
+        Intent aboutActivityIntent = new Intent( NoNetworkActivity.this , AboutActivity.class);
+        startActivity(aboutActivityIntent);
     }
 
     @Override
@@ -115,6 +132,14 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
 
             case R.id.activityNoNetwork_button_warning:
                 openNetworkSetting();
+                break;
+
+            case R.id.activityNoNetwork_button_about:
+                aboutActivityIntent();
+                break;
+
+            case R.id.activityNoNetwork_button_exit:
+                System.exit(0);
                 break;
         }
     }

@@ -19,7 +19,7 @@
             android:layout_toStartOf="@+id/rowListView_simpleDraweeView_weatherConditionIcon"
             android:layout_marginTop="10dp"
             android:layout_marginStart="8dp"
-            android:textSize="24sp"
+            android:textSize="@dimen/date_textView"
             android:textColor="@color/colorWhite" />
 
         <ImageView
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:textSize="24sp"
+            android:textSize="@dimen/date_textView"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="6dp"
             android:layout_marginStart="8dp"
@@ -47,14 +47,16 @@
 
     <LinearLayout
         android:id="@+id/rowListView_linearLayout_temperatureAxis"
-        android:layout_width="340dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="4"
         android:layout_centerInParent="true"
         android:layout_below="@+id/rowListView_relativeLayout_header"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp" >
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp" >
 
         <include
             android:id="@+id/rowListView_layout_morningTemperature"

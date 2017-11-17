@@ -1,61 +1,26 @@
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="ir.mahdiha.weatherforecast.app.NoNetworkActivity" >
+    tools:context="ir.mahdiha.weatherforecast.Forecast.ForecastActivity" >
 
-    <ImageView
-        android:id="@+id/activityNoNetwork_imageView_warning"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/warningicon"
-        android:layout_centerInParent="true" />
-
-    <ir.mahdiha.weatherforecast.customviews.PersianTextView
-        android:id="@+id/activityNoNetwork_persianTextView_warning"
-        android:layout_below="@+id/activityNoNetwork_imageView_warning"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_centerInParent="true"
-        android:text="@string/noNetworkWarning"
-        android:textColor="@color/colorBlack"
-        android:textSize="18sp"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        app:locale="fa_IR" />
+        android:theme="@style/AppTheme.AppBarOverlay" >
 
-    <Button
-        android:id="@+id/activityNoNetwork_button_warning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/activityNoNetwork_persianTextView_warning"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="@dimen/buttonMargin_activityNoNetwork"
-        android:layout_marginEnd="@dimen/buttonMargin_activityNoNetwork"
-        android:layout_marginTop="20dp"
-        android:text="@string/noNetworkWarningButtonText"
-        android:background="@drawable/background_button_warning"
-        android:textSize="20sp"
-        android:gravity="center" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/activityNoNetwork_ToolBar_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <Button
-        android:id="@+id/activityNoNetwork_button_retry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/activityNoNetwork_button_warning"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="@dimen/buttonMargin_activityNoNetwork"
-        android:layout_marginEnd="@dimen/buttonMargin_activityNoNetwork"
-        android:layout_marginTop="10dp"
-        android:text="@string/noNetworkRetryButtonText"
-        android:background="@drawable/background_button_retry"
-        android:textSize="20sp"
-        android:gravity="center" />
+    </android.support.design.widget.AppBarLayout>
 
-</RelativeLayout>
+    <include layout="@layout/content_no_network" />
+
+</android.support.design.widget.CoordinatorLayout>

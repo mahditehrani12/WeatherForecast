@@ -21,7 +21,9 @@ import java.util.Objects;
 import ir.mahdiha.weatherforecast.Forecast.entity.ApiResponse;
 import ir.mahdiha.weatherforecast.Forecast.entity.List;
 import ir.mahdiha.weatherforecast.R;
+import ir.mahdiha.weatherforecast.app.AboutActivity;
 import ir.mahdiha.weatherforecast.app.App;
+import ir.mahdiha.weatherforecast.app.SettingActivity;
 import ir.mahdiha.weatherforecast.helper.ConvertDateHelper;
 import ir.mahdiha.weatherforecast.helper.HelperFunctions;
 import ir.mahdiha.weatherforecast.helper.ScreenSizeUtils;
@@ -102,6 +104,18 @@ public class ForecastActivity extends AppCompatActivity
         mForecastListListView = (ListView) findViewById(R.id.activityForecast_listView_forecastList);
     }
 
+    public void aboutActivityIntent()
+    {
+        Intent aboutActivityIntent = new Intent( ForecastActivity.this , AboutActivity.class);
+        startActivity(aboutActivityIntent);
+    }
+
+    public void settingActivityIntent()
+    {
+        Intent settingActivityIntent = new Intent( ForecastActivity.this , SettingActivity.class);
+        startActivity(settingActivityIntent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -114,10 +128,9 @@ public class ForecastActivity extends AppCompatActivity
     {
         int id = item.getItemId();
 
-        if (id == R.id.action_about)
-        {
-            return true;
-        }
+        if (id == R.id.action_about){aboutActivityIntent();}
+        if (id == R.id.action_exit){System.exit(0);}
+        if (id == R.id.action_setting){settingActivityIntent();}
 
         return super.onOptionsItemSelected(item);
     }
@@ -171,6 +184,10 @@ public class ForecastActivity extends AppCompatActivity
                         { Item1.setWeatherConditionIcon(R.drawable.onedriveicon); }
                         else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "ابرهای پراکنده"))
                         { Item1.setWeatherConditionIcon(R.drawable.onedriveicon); }
+                        else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "بارش خفیف برف"))
+                        { Item1.setWeatherConditionIcon(R.drawable.snow); }
+                        else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "برف"))
+                        { Item1.setWeatherConditionIcon(R.drawable.snowing); }
 
 
                         getMorn = String.valueOf(listItem.getTemp().getMorn());

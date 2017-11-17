@@ -1,6 +1,10 @@
 <resources>
 
     <string name="app_name">Weather Forecast</string>
+    <string name="aboutActivity_title"> About Us </string>
+    <string name="settingActivity_title"> Setting </string>
+    <string name="NoNetworkActivity_title"> Not Connected ! </string>
+
     <string name="windDirection"> جهت وزش باد </string>
     <string name="windSpeed"> سرعت وزش باد </string>
     <string name="humidityPercent"> میزان رطوبت </string>
@@ -11,6 +15,9 @@
     <string name="noNetworkWarning"> اخطار : شما به اینترنت متصل نیستید ! </string>
     <string name="noNetworkWarningButtonText"> بررسی تنظیمات </string>
     <string name="noNetworkRetryButtonText"> تلاش مجدد </string>
+    <string name="noNetworkAboutButtonText"> درباره ما </string>
+    <string name="noNetworkExitButtonText"> خروج </string>
+    <string name="changeBackgroundColorTextView"> تغییر رنگ پس زمینه : </string>
 
     <string name="MorningTempratureLable"> صبح </string>
     <string name="DayTempratureLable"> ظهر </string>
@@ -22,5 +29,10 @@
     <string name="testNum"> 31 </string>
 
     <string name="action_about"> About Application </string>
+    <string name="action_exit"> Exit </string>
+    <string name="action_setting"> Setting </string>
+
+    <string name="colorPickerView_ok"> OK </string>
+    <string name="colorPickerView_downArrow"> ↓ </string>
 
 </resources>
