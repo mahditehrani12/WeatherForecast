@@ -10,4 +10,5 @@
     <color name="stroke_background_info_box">#000c4c</color>
     <color name="colorSwipeRefresh">#ee373f</color>
     <color name="colorSplashBackground">#171717</color>
+    <color name="red"> #c3050c </color>
 </resources>

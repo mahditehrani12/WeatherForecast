@@ -23,7 +23,6 @@ import ir.mahdiha.weatherforecast.Forecast.entity.List;
 import ir.mahdiha.weatherforecast.R;
 import ir.mahdiha.weatherforecast.app.AboutActivity;
 import ir.mahdiha.weatherforecast.app.App;
-import ir.mahdiha.weatherforecast.app.SettingActivity;
 import ir.mahdiha.weatherforecast.helper.ConvertDateHelper;
 import ir.mahdiha.weatherforecast.helper.HelperFunctions;
 import ir.mahdiha.weatherforecast.helper.ScreenSizeUtils;
@@ -89,7 +88,7 @@ public class ForecastActivity extends AppCompatActivity
         }).start();
 
         findViews();
-        initListView();
+        initRecyclerView();
 
     }
 
@@ -110,12 +109,6 @@ public class ForecastActivity extends AppCompatActivity
         startActivity(aboutActivityIntent);
     }
 
-    public void settingActivityIntent()
-    {
-        Intent settingActivityIntent = new Intent( ForecastActivity.this , SettingActivity.class);
-        startActivity(settingActivityIntent);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -130,15 +123,15 @@ public class ForecastActivity extends AppCompatActivity
 
         if (id == R.id.action_about){aboutActivityIntent();}
         if (id == R.id.action_exit){System.exit(0);}
-        if (id == R.id.action_setting){settingActivityIntent();}
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void initListView()
+    private void initRecyclerView()
     {
         mForecastListAdapter = new ForecastListAdapter(mForecastListItems);
         mForecastListListView.setAdapter(mForecastListAdapter);
+
     }
 
     private void loadData()
