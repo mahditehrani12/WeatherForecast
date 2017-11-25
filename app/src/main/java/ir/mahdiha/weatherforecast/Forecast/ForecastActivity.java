@@ -123,6 +123,12 @@ public class ForecastActivity extends AppCompatActivity
 
         if (id == R.id.action_about){aboutActivityIntent();}
         if (id == R.id.action_exit){System.exit(0);}
+        if (id == R.id.action_unistall){HelperFunctions.uninstallApp(ForecastActivity.this , getPackageName());}
+        if (id == R.id.action_contactMe)
+        {
+            final String telegramId = "MahdiTehrani1380";
+            HelperFunctions.TelegramIntent(ForecastActivity.this , telegramId);
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -203,6 +209,7 @@ public class ForecastActivity extends AppCompatActivity
                         Item1.setAtmosphericPressure(HelperFunctions.convertDateToPersian ( String.valueOf ((int) listItem.getPressure()) + " hPa " ));
                         Item1.setWindSpeed(HelperFunctions.convertDateToPersian( String.valueOf ((int) listItem.getSpeed()) + " m/s " ));
 
+//                      Screen Utils
                         ScreenSizeUtils mScreenUtils = new ScreenSizeUtils(ForecastActivity.this);
                         String DensityDPI = mScreenUtils.GET_widthxheight_dp();
                         Log.e(TAG_DEBUG , DensityDPI );

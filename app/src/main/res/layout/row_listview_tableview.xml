@@ -1,0 +1,63 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true" >
+
+    <TableRow
+        android:layout_marginBottom="16dp" >
+        <include
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:id="@+id/rowListView_layout_dailyTempratureRange"
+            layout="@layout/layout_info_box" />
+        <View
+            android:layout_width="10dp"
+            android:layout_height="0dp" />
+        <include
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:id="@+id/rowListView_layout_cloudinessPercent"
+            layout="@layout/layout_info_box" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginBottom="16dp" >
+        <include
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:id="@+id/rowListView_layout_atmosphericPressure"
+            layout="@layout/layout_info_box" />
+        <View
+            android:layout_width="10dp"
+            android:layout_height="0dp"/>
+        <include
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:id="@+id/rowListView_layout_humidityPercent"
+            layout="@layout/layout_info_box" />
+    </TableRow>
+
+    <TableRow>
+        <include
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:id="@+id/rowListView_layout_windSpeed"
+            layout="@layout/layout_info_box" />
+        <View
+            android:layout_width="10dp"
+            android:layout_height="0dp"/>
+        <include
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:id="@+id/rowListView_layout_windDirection"
+            layout="@layout/layout_info_box" />
+    </TableRow>
+
+</TableLayout>

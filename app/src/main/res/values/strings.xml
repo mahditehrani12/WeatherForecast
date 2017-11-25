@@ -30,7 +30,8 @@
 
     <string name="action_about"> About Application </string>
     <string name="action_exit"> Exit </string>
-    <string name="action_setting"> Setting </string>
+    <string name="action_uninstall"> Uninstall </string>
+    <string name="action_contactMe"> Contact Me </string>
 
     <string name="colorPickerView_ok"> OK </string>
     <string name="colorPickerView_downArrow"> ↓ </string>
