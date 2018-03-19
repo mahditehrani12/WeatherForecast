@@ -8,18 +8,21 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.provider.Settings;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class HelperFunctions {
-    private HelperFunctions() {
+public class HelperFunctions
+{
+    private HelperFunctions()
+    {
+
     }
 
-    public static boolean isNetworkConnected(Context context) {
+    public static boolean isNetworkConnected(Context context)
+    {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         assert connectivityManager != null;
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
@@ -49,13 +52,6 @@ public class HelperFunctions {
             persianizedStr.append((char) persianizedUnicode);
         }
         return persianizedStr.toString();
-    }
-
-    public static void uninstallApp(Activity activity , String packageName)
-    {
-        Uri uri = Uri.parse("package:" + packageName);
-        Intent uninstallIntent = new Intent(Intent.ACTION_DELETE , uri);
-        activity.startActivity(uninstallIntent);
     }
 
     public static  boolean isFirstTimeRun(Context mContext)

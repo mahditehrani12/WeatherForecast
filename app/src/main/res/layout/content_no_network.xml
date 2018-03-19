@@ -11,7 +11,7 @@
         android:id="@+id/activityNoNetwork_imageView_warning"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/warningicon"
+        android:src="@drawable/ic_signal_wifi_off_black_48dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp" />
 
@@ -26,12 +26,12 @@
         android:layout_centerInParent="true"
         android:text="@string/noNetworkWarning"
         android:textColor="@color/colorBlack"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:layout_centerVertical="true"
         android:gravity="center"
         app:locale="fa_IR" />
 
-    <Button
+    <ir.mahdiha.weatherforecast.customviews.PersianButton
         android:id="@+id/activityNoNetwork_button_warning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:textSize="20sp"
         android:gravity="center" />
 
-    <Button
+    <ir.mahdiha.weatherforecast.customviews.PersianButton
         android:id="@+id/activityNoNetwork_button_retry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         android:textSize="20sp"
         android:gravity="center" />
 
-    <Button
+    <ir.mahdiha.weatherforecast.customviews.PersianButton
         android:id="@+id/activityNoNetwork_button_about"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
         android:textSize="20sp"
         android:gravity="center" />
 
-    <Button
+    <ir.mahdiha.weatherforecast.customviews.PersianButton
         android:id="@+id/activityNoNetwork_button_exit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

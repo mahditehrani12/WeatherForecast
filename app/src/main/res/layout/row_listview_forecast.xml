@@ -27,12 +27,13 @@
 
         <ImageView
             android:id="@+id/rowListView_simpleDraweeView_weatherConditionIcon"
-            android:layout_width="110dip"
-            android:layout_height="110dip"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:gravity="center_vertical"
-            android:layout_margin="5dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp" />
 
         <ir.mahdiha.weatherforecast.customviews.PersianTextView
             android:id="@+id/rowListView_textView_weatherCondition"
@@ -80,11 +81,11 @@
     </LinearLayout>
 
     <include
+        layout="@layout/row_listview_tableview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/rowListView_tableView_forecastTableView"
         android:layout_below="@+id/rowListView_linearLayout_temperatureAxis"
-        layout="@layout/row_listview_tableview"
         android:layout_centerInParent="true" />
 
 </RelativeLayout>

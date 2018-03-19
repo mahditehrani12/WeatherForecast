@@ -122,19 +122,14 @@ public class ForecastActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.action_about){aboutActivityIntent();}
-        if (id == R.id.action_exit){System.exit(0);}
-        if (id == R.id.action_unistall){HelperFunctions.uninstallApp(ForecastActivity.this , getPackageName());}
-        if (id == R.id.action_contactMe)
-        {
-            final String telegramId = "MahdiTehrani1380";
-            HelperFunctions.TelegramIntent(ForecastActivity.this , telegramId);
-        }
+        if (id == R.id.action_contactMe){}
 
         return super.onOptionsItemSelected(item);
     }
 
     private void initRecyclerView()
     {
+
         mForecastListAdapter = new ForecastListAdapter(mForecastListItems);
         mForecastListListView.setAdapter(mForecastListAdapter);
 
@@ -143,6 +138,7 @@ public class ForecastActivity extends AppCompatActivity
     private void loadData()
     {
         Log.i(TAG_DEBUG, " Program Is In loadData Method ");
+
         Retrofit retrofit = App.getApplication().getRetrofit();
         ForecastApi api = retrofit.create(ForecastApi.class);
         Call<ApiResponse> call = api.getForecastList( 112931 , 14 );
@@ -212,12 +208,12 @@ public class ForecastActivity extends AppCompatActivity
 //                      Screen Utils
                         ScreenSizeUtils mScreenUtils = new ScreenSizeUtils(ForecastActivity.this);
                         String DensityDPI = mScreenUtils.GET_widthxheight_dp();
-                        Log.e(TAG_DEBUG , DensityDPI );
+                        Log.e(TAG_DEBUG , "Screen Size in DP : " + DensityDPI );
                         String DensityPX = mScreenUtils.GET_widthxheight_px();
-                        Log.e(TAG_DEBUG , DensityPX);
+                        Log.e(TAG_DEBUG , "Screen Size in PX : " + DensityPX);
 
                         String ScreenDensity = ScreenSizeUtils.getDensityName(ForecastActivity.this);
-                        Log.e(TAG_DEBUG , ScreenDensity );
+                        Log.e(TAG_DEBUG , "Screen Density : " + ScreenDensity );
 
                         mForecastListItems.add(Item1);
                         Log.i(TAG_DEBUG , " Response Get Successfully ");

@@ -1,9 +1,80 @@
-<android.support.constraint.ConstraintLayout
+<?xml version="1.0" encoding="utf-8"?>
 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    android:background="@color/colorSplashBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ir.mahdiha.weatherforecast.app.LaunchActivity">
+    android:gravity="center"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</android.support.constraint.ConstraintLayout>
+        <ir.mahdiha.weatherforecast.customviews.PersianTextView
+            android:id="@+id/activityLaunch_persianTextView_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center"
+            android:textSize="22sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/splash_text" />
+
+        <RelativeLayout
+            android:id="@+id/activityLaunch_relativeLayout_iconContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activityLaunch_persianTextView_desc"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true" >
+
+            <ImageView
+                android:id="@+id/activityLaunch_imageView_sunrise"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/splash_sunrise"/>
+
+            <ImageView
+                android:id="@+id/activityLaunch_imageView_cloudy"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@id/activityLaunch_imageView_sunrise"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/splash_cloudy" />
+
+            <ImageView
+                android:id="@+id/activityLaunch_imageView_rain"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@id/activityLaunch_imageView_cloudy"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/splash_rain" />
+
+            <ImageView
+                android:id="@+id/activityLaunch_imageView_snowflake"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@id/activityLaunch_imageView_rain"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/splash_snowflake" />
+
+            <ImageView
+                android:id="@+id/activityLaunch_imageView_summer"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@id/activityLaunch_imageView_snowflake"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/splash_summer" />
+
+        </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/activityLaunch_progressBar_progress"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/activityLaunch_relativeLayout_iconContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" />
+
+</RelativeLayout>

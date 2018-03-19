@@ -7,11 +7,10 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import ir.mahdiha.weatherforecast.Forecast.ForecastActivity;
 import ir.mahdiha.weatherforecast.R;
+import ir.mahdiha.weatherforecast.customviews.PersianButton;
 import ir.mahdiha.weatherforecast.helper.HelperFunctions;
 
 public class NoNetworkActivity extends AppCompatActivity implements View.OnClickListener
@@ -19,10 +18,10 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
 
     private static final String KEY_EXTRA_STARTER_NAME = "KEY_EXTRA_STARTER_NAME";
 
-    private Button mRetryButton;
-    private Button mCheckSettingsButton;
-    private Button mAboutButton;
-    private Button mExitButton;
+    private PersianButton mRetryButton;
+    private PersianButton mCheckSettingsButton;
+    private PersianButton mAboutButton;
+    private PersianButton mExitButton;
 
     private String mStarterName;
 
@@ -63,10 +62,10 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
 
     private void findViews()
     {
-        mRetryButton = (Button) findViewById(R.id.activityNoNetwork_button_retry);
-        mCheckSettingsButton = (Button) findViewById(R.id.activityNoNetwork_button_warning);
-        mAboutButton = (Button) findViewById(R.id.activityNoNetwork_button_about);
-        mExitButton = (Button) findViewById(R.id.activityNoNetwork_button_exit);
+        mRetryButton = (PersianButton) findViewById(R.id.activityNoNetwork_button_retry);
+        mCheckSettingsButton = (PersianButton) findViewById(R.id.activityNoNetwork_button_warning);
+        mAboutButton = (PersianButton) findViewById(R.id.activityNoNetwork_button_about);
+        mExitButton = (PersianButton) findViewById(R.id.activityNoNetwork_button_exit);
     }
 
     private void setOnClickListeners()

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ir.mahdiha.weatherforecast">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,17 +16,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/weather_icon_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <activity android:name=".app.LaunchActivity" />
-        <activity android:name=".Forecast.ForecastActivity" />
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait" >
 
         <activity
-            android:name=".app.NoNetworkActivity"
-            android:label="@string/NoNetworkActivity_title" >
-        </activity>
-
-        <activity android:name=".app.SplashActivity">
+            android:name=".app.LaunchActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,8 +29,18 @@
         </activity>
 
         <activity
+            android:name=".Forecast.ForecastActivity"
+            tools:ignore="InnerclassSeparator" >
+        </activity>
+
+        <activity
+            android:name=".app.NoNetworkActivity"
+            android:label="@string/NoNetworkActivity_title" >
+        </activity>
+
+        <activity
             android:name=".app.AboutActivity"
-            android:label="@string/aboutActivity_title">
+            android:label="@string/aboutActivity_title" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".app.LaunchActivity">
