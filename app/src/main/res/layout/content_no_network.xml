@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="ir.mahdiha.weatherforecast.app.NoNetworkActivity" >
 
@@ -56,34 +57,6 @@
         android:layout_marginTop="10dp"
         android:text="@string/noNetworkRetryButtonText"
         android:background="@drawable/background_button_retry"
-        android:textSize="20sp"
-        android:gravity="center" />
-
-    <ir.mahdiha.weatherforecast.customviews.PersianButton
-        android:id="@+id/activityNoNetwork_button_about"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/activityNoNetwork_button_retry"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="@dimen/buttonMargin_activityNoNetwork"
-        android:layout_marginEnd="@dimen/buttonMargin_activityNoNetwork"
-        android:layout_marginTop="10dp"
-        android:text="@string/noNetworkAboutButtonText"
-        android:background="@drawable/background_button_about"
-        android:textSize="20sp"
-        android:gravity="center" />
-
-    <ir.mahdiha.weatherforecast.customviews.PersianButton
-        android:id="@+id/activityNoNetwork_button_exit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/activityNoNetwork_button_about"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="@dimen/buttonMargin_activityNoNetwork"
-        android:layout_marginEnd="@dimen/buttonMargin_activityNoNetwork"
-        android:layout_marginTop="10dp"
-        android:text="@string/noNetworkExitButtonText"
-        android:background="@drawable/background_button_exit"
         android:textSize="20sp"
         android:gravity="center" />
 

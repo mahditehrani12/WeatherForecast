@@ -31,6 +31,6 @@
     <string name="action_about"> درباره اپلیکیشن </string>
     <string name="action_contactMe"> تماس با ما </string>
 
-    <string name="splash_about"> محمد مهدی تهرانی فخر </string>
+    <string name="creator_name"> محمد مهدی تهرانی فخر </string>
 
 </resources>

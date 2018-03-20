@@ -20,8 +20,6 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
 
     private PersianButton mRetryButton;
     private PersianButton mCheckSettingsButton;
-    private PersianButton mAboutButton;
-    private PersianButton mExitButton;
 
     private String mStarterName;
 
@@ -64,21 +62,16 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
     {
         mRetryButton = (PersianButton) findViewById(R.id.activityNoNetwork_button_retry);
         mCheckSettingsButton = (PersianButton) findViewById(R.id.activityNoNetwork_button_warning);
-        mAboutButton = (PersianButton) findViewById(R.id.activityNoNetwork_button_about);
-        mExitButton = (PersianButton) findViewById(R.id.activityNoNetwork_button_exit);
     }
 
     private void setOnClickListeners()
     {
         mRetryButton.setOnClickListener(this);
         mCheckSettingsButton.setOnClickListener(this);
-        mAboutButton.setOnClickListener(this);
-        mExitButton.setOnClickListener(this);
     }
 
     private void openNetworkSetting()
     {
-
         try
         {
             Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
@@ -95,12 +88,6 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-    }
-
-    public void aboutActivityIntent()
-    {
-        Intent aboutActivityIntent = new Intent( NoNetworkActivity.this , AboutActivity.class);
-        startActivity(aboutActivityIntent);
     }
 
     @Override
@@ -131,14 +118,6 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
 
             case R.id.activityNoNetwork_button_warning:
                 openNetworkSetting();
-                break;
-
-            case R.id.activityNoNetwork_button_about:
-                aboutActivityIntent();
-                break;
-
-            case R.id.activityNoNetwork_button_exit:
-                System.exit(0);
                 break;
         }
     }

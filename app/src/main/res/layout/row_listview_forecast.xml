@@ -27,12 +27,12 @@
 
         <ImageView
             android:id="@+id/rowListView_simpleDraweeView_weatherConditionIcon"
-            android:layout_width="95dp"
-            android:layout_height="95dp"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:gravity="center_vertical"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp" />
 
         <ir.mahdiha.weatherforecast.customviews.PersianTextView

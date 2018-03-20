@@ -23,6 +23,7 @@ import ir.mahdiha.weatherforecast.Forecast.entity.List;
 import ir.mahdiha.weatherforecast.R;
 import ir.mahdiha.weatherforecast.app.AboutActivity;
 import ir.mahdiha.weatherforecast.app.App;
+import ir.mahdiha.weatherforecast.app.ContactActivity;
 import ir.mahdiha.weatherforecast.helper.ConvertDateHelper;
 import ir.mahdiha.weatherforecast.helper.HelperFunctions;
 import ir.mahdiha.weatherforecast.helper.ScreenSizeUtils;
@@ -70,13 +71,14 @@ public class ForecastActivity extends AppCompatActivity
                         {
                             swipeRefreshLayout.setRefreshing(false);
                             mForecastListAdapter.notifyDataSetChanged();
+                            loadData();
                             Toast.makeText(ForecastActivity.this , "لیست آب و هوا بروز شد" , Toast.LENGTH_SHORT).show();
                         } else {
                             swipeRefreshLayout.setRefreshing(false);
                             Toast.makeText(ForecastActivity.this , "لطفا ابتدا به اینترنت متصل شوید" , Toast.LENGTH_LONG).show();
                         }
                     }
-                } , 3000 );
+                } , 2000 );
             }
         });
 
@@ -98,6 +100,17 @@ public class ForecastActivity extends AppCompatActivity
         context.startActivity(starter);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+
+        if (id == R.id.action_about){ aboutActivityIntent(); }
+        if (id == R.id.action_contactMe){ contactActivityIntent(); }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     private void findViews()
     {
         mForecastListListView = (ListView) findViewById(R.id.activityForecast_listView_forecastList);
@@ -109,6 +122,12 @@ public class ForecastActivity extends AppCompatActivity
         startActivity(aboutActivityIntent);
     }
 
+    public void contactActivityIntent()
+    {
+        Intent contactActivityIntent = new Intent( ForecastActivity.this , ContactActivity.class);
+        startActivity(contactActivityIntent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -116,23 +135,10 @@ public class ForecastActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        int id = item.getItemId();
-
-        if (id == R.id.action_about){aboutActivityIntent();}
-        if (id == R.id.action_contactMe){}
-
-        return super.onOptionsItemSelected(item);
-    }
-
     private void initRecyclerView()
     {
-
         mForecastListAdapter = new ForecastListAdapter(mForecastListItems);
         mForecastListListView.setAdapter(mForecastListAdapter);
-
     }
 
     private void loadData()
@@ -164,25 +170,25 @@ public class ForecastActivity extends AppCompatActivity
                         Log.e(TAG_DEBUG , ConvertDateHelper.getCurrentShamsidate());
 
                         if ( Objects.equals ( listItem.getWeather().get(0).getDescription() , "آسمان صاف" ))
-                        { Item1.setWeatherConditionIcon(R.drawable.sunicon); }
+                        { Item1.setWeatherConditionIcon(R.drawable.sun); }
                         else if (Objects.equals ( listItem.getWeather().get(0).getDescription() , "بارش خفیف باران" ))
-                        { Item1.setWeatherConditionIcon(R.drawable.cloudicon); }
+                        { Item1.setWeatherConditionIcon(R.drawable.lowrain); }
                         else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "بارش باران" ))
-                        { Item1.setWeatherConditionIcon(R.drawable.rainicon); }
+                        { Item1.setWeatherConditionIcon(R.drawable.splash_rain); }
                         else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "پوشیده از ابر" ))
                         { Item1.setWeatherConditionIcon(R.drawable.cloudy);}
                         else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "بارش خیلی شدید باران"))
-                        { Item1.setWeatherConditionIcon(R.drawable.raininghigh);}
+                        { Item1.setWeatherConditionIcon(R.drawable.highrain);}
                         else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "کمی ابری"))
-                        { Item1.setWeatherConditionIcon(R.drawable.lowcloudicon); }
+                        { Item1.setWeatherConditionIcon(R.drawable.lowcloud); }
                         else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "ابرهای پارچه پارچه شده"))
-                        { Item1.setWeatherConditionIcon(R.drawable.onedriveicon); }
+                        { Item1.setWeatherConditionIcon(R.drawable.scatteredclouds); }
                         else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "ابرهای پراکنده"))
-                        { Item1.setWeatherConditionIcon(R.drawable.onedriveicon); }
+                        { Item1.setWeatherConditionIcon(R.drawable.scatteredclouds); }
                         else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "بارش خفیف برف"))
-                        { Item1.setWeatherConditionIcon(R.drawable.snow); }
-                        else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "برف"))
                         { Item1.setWeatherConditionIcon(R.drawable.snowing); }
+                        else if (Objects.equals(listItem.getWeather().get(0).getDescription() , "برف"))
+                        { Item1.setWeatherConditionIcon(R.drawable.splash_snowflake); }
 
 
                         getMorn = String.valueOf(listItem.getTemp().getMorn());
@@ -225,6 +231,8 @@ public class ForecastActivity extends AppCompatActivity
             public void onFailure(@NonNull Call<ApiResponse> call, @NonNull Throwable throwable)
             {
                 Log.i(TAG_DEBUG , "Getting Response Failed ! ");
+
+                Toast.makeText(getApplicationContext() , "خطا در دریافت اطلاعات" , Toast.LENGTH_SHORT).show();
 
                 if (throwable instanceof IOException)
                 {
