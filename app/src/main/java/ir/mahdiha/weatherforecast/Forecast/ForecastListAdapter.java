@@ -1,5 +1,6 @@
 package ir.mahdiha.weatherforecast.Forecast;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +44,7 @@ class ForecastListAdapter extends BaseAdapter
         return 0;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
@@ -99,6 +101,9 @@ class ForecastListAdapter extends BaseAdapter
             holder.windDirectionInfoBoxLayout = convertView.findViewById(R.id.rowListView_layout_windDirection);
             holder.windDirectionTitleTV = holder.windDirectionInfoBoxLayout.findViewById(R.id.layoutInfoBox_textView_title);
             holder.windDirectionValueTV = holder.windDirectionInfoBoxLayout.findViewById(R.id.layoutInfoBox_textView_value);
+
+//            holder.pollutionTV = convertView.findViewById(R.id.rowListView_persianTextView_pollution);
+
 
         } else {
             holder = (ViewHolder) convertView.getTag();

@@ -6,15 +6,21 @@
     tools:context="ir.mahdiha.weatherforecast.Forecast.ForecastActivity" >
 
     <item
+        android:id="@+id/action_Pollution"
+        android:orderInCategory="100"
+        android:title="@string/action_pollution"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_about"
         android:orderInCategory="100"
         android:title="@string/action_about"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/action_contactMe"
-        android:orderInCategory="100"
-        android:title="@string/action_contactMe"
-        app:showAsAction="never" />
+    android:id="@+id/action_contactMe"
+    android:orderInCategory="100"
+    android:title="@string/action_contactMe"
+    app:showAsAction="never" />
 
 </menu>

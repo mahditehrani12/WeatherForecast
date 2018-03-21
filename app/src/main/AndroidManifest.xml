@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".app.App"
@@ -25,10 +26,10 @@
         </activity>
         <activity
             android:name=".Forecast.ForecastActivity"
-            tools:ignore="InnerclassSeparator"></activity>
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".app.NoNetworkActivity"
-            android:label="@string/NoNetworkActivity_title"></activity>
+            android:label="@string/NoNetworkActivity_title" />
         <activity
             android:name=".app.AboutActivity"
             android:label="@string/aboutActivity_title">
@@ -36,7 +37,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".app.LaunchActivity"></meta-data>
         </activity>
-        <activity android:name=".app.ContactActivity"></activity>
+        <activity android:name=".app.ContactActivity" />
+        <activity android:name=".app.PollutionActivity"></activity>
     </application>
 
 </manifest>

@@ -13,7 +13,9 @@
     <string name="dailyTempratureRange"> بازه روزانه دما </string>
 
     <string name="noNetworkWarning"> خطا در برقرای ارتباط با سرور ! </string>
-    <string name="noNetworkWarningButtonText"> بررسی تنظیمات </string>
+    <string name="receive_pollution"> در حال دریافت اطلاعات ... </string>
+    
+    <string name="noNetworkWarningButtonText"> بررسی تنظیمات شبکه </string>
     <string name="noNetworkRetryButtonText"> تلاش مجدد </string>
     <string name="noNetworkAboutButtonText"> درباره ما </string>
     <string name="noNetworkExitButtonText"> خروج </string>
@@ -30,7 +32,9 @@
 
     <string name="action_about"> درباره اپلیکیشن </string>
     <string name="action_contactMe"> تماس با ما </string>
+    <string name="action_pollution"> شاخص آلودگی هوا </string>
 
     <string name="creator_name"> محمد مهدی تهرانی فخر </string>
+    <string name="pollutionText"> شاخص آلودگی هوای تهران : </string>
 
 </resources>

@@ -3,6 +3,7 @@ package ir.mahdiha.weatherforecast.app;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -54,6 +55,9 @@ public class NoNetworkActivity extends AppCompatActivity implements View.OnClick
             { LaunchActivity.start(this); }
             finish();
         } else {
+            Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            assert vibe != null;
+            vibe.vibrate(100);
             Toast.makeText(NoNetworkActivity.this , " لطفا ابتدا به اینترنت متصل شوید " , Toast.LENGTH_SHORT).show();
         }
     }

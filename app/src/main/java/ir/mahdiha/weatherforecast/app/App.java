@@ -9,7 +9,11 @@ public class App extends Application
 {
 
     public static final String BASE_URL = "http://api.openweathermap.org/data/2.5/";
+    public static final String BASE_URL_POLLUTION = "https://api.waqi.info/";
+
     private Retrofit mRetrofit;
+    private Retrofit mRetrofitPollution;
+
     private static App sApp;
 
     @Override
@@ -35,7 +39,18 @@ public class App extends Application
         }
 
         return mRetrofit;
+    }
 
+    public Retrofit getmRetrofitPollution()
+    {
+        if ( mRetrofitPollution == null )
+        {
+            mRetrofitPollution = new Retrofit.Builder()
+                    .baseUrl(BASE_URL_POLLUTION)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return mRetrofitPollution;
     }
 
 }

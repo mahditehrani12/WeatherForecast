@@ -2,8 +2,6 @@ package ir.mahdiha.weatherforecast.Forecast;
 
 public class ForecastListItem
 {
-    //Model Class
-
     private String data;
     private String weatherCondition;
     private int weatherConditionIcon;
@@ -21,6 +19,8 @@ public class ForecastListItem
     private String humidityPercent;
     private String windSpeed;
     private String windDirection;
+
+    private String pollution;
 
     public String getData()
     {

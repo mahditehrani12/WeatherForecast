@@ -24,6 +24,7 @@ import ir.mahdiha.weatherforecast.R;
 import ir.mahdiha.weatherforecast.app.AboutActivity;
 import ir.mahdiha.weatherforecast.app.App;
 import ir.mahdiha.weatherforecast.app.ContactActivity;
+import ir.mahdiha.weatherforecast.app.PollutionActivity;
 import ir.mahdiha.weatherforecast.helper.ConvertDateHelper;
 import ir.mahdiha.weatherforecast.helper.HelperFunctions;
 import ir.mahdiha.weatherforecast.helper.ScreenSizeUtils;
@@ -107,6 +108,7 @@ public class ForecastActivity extends AppCompatActivity
 
         if (id == R.id.action_about){ aboutActivityIntent(); }
         if (id == R.id.action_contactMe){ contactActivityIntent(); }
+        if (id == R.id.action_Pollution){ pollutionActivityIntent(); }
 
         return super.onOptionsItemSelected(item);
     }
@@ -126,6 +128,12 @@ public class ForecastActivity extends AppCompatActivity
     {
         Intent contactActivityIntent = new Intent( ForecastActivity.this , ContactActivity.class);
         startActivity(contactActivityIntent);
+    }
+
+    public void pollutionActivityIntent()
+    {
+        Intent pollutionActivityIntent = new Intent( ForecastActivity.this , PollutionActivity.class);
+        startActivity(pollutionActivityIntent);
     }
 
     @Override
@@ -155,14 +163,16 @@ public class ForecastActivity extends AppCompatActivity
             {
                 if (response.code() == 200)
                 {
+
                     ApiResponse apiResponse = response.body();
                     assert apiResponse != null;
                     java.util.List<List> list = apiResponse.getList();
 
-                    for (List listItem : list )
+                    for (final List listItem : list )
                     {
                         Log.i(TAG_DEBUG , "Application Is In For loop");
-                        ForecastListItem Item1 = new ForecastListItem();
+
+                        final ForecastListItem Item1 = new ForecastListItem();
 
                         Item1.setData(HelperFunctions.convertDateToPersian(ConvertDateHelper.getCurrentShamsidate(HelperFunctions.convertEpochToHumanReadableDate(listItem.getDt()))));
                         Item1.setWeatherCondition(listItem.getWeather().get(0).getDescription());
@@ -231,7 +241,6 @@ public class ForecastActivity extends AppCompatActivity
             public void onFailure(@NonNull Call<ApiResponse> call, @NonNull Throwable throwable)
             {
                 Log.i(TAG_DEBUG , "Getting Response Failed ! ");
-
                 Toast.makeText(getApplicationContext() , "خطا در دریافت اطلاعات" , Toast.LENGTH_SHORT).show();
 
                 if (throwable instanceof IOException)
