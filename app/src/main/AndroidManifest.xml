@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="ir.mahdiha.weatherforecast">
 
@@ -17,28 +19,56 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".app.LaunchActivity">
+
+        <activity android:name=".app.LaunchActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
+            android:screenOrientation="portrait"
             android:name=".Forecast.ForecastActivity"
             tools:ignore="InnerclassSeparator" />
+
         <activity
+            android:screenOrientation="portrait"
             android:name=".app.NoNetworkActivity"
             android:label="@string/NoNetworkActivity_title" />
+
         <activity
+            android:screenOrientation="portrait"
             android:name=".app.AboutActivity"
             android:label="@string/aboutActivity_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".app.LaunchActivity"></meta-data>
+                android:value=".app.LaunchActivity">
+            </meta-data>
         </activity>
-        <activity android:name=".app.ContactActivity" />
-        <activity android:name=".app.PollutionActivity"></activity>
+
+        <activity
+            android:name=".app.ContactActivity"
+            android:label="@string/contactActivity_title"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".app.LaunchActivity">
+            </meta-data>
+        </activity>
+
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".app.PollutionActivity"
+            android:label="@string/pollutionActivity_title" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".app.LaunchActivity">
+            </meta-data>
+        </activity>
+
     </application>
 
 </manifest>

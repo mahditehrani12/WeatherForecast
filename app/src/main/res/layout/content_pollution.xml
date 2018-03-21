@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ir.mahdiha.weatherforecast.app.PollutionActivity"
+    android:background="@color/color_background"
+    tools:showIn="@layout/activity_pollution" >
+
+    <ImageView
+        android:id="@+id/activityPollution_imageView_factory"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/factory" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityPollution_persianTextView_pollutionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activityPollution_imageView_factory"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/pollutionText"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp" />
+
+    <ProgressBar
+        android:id="@+id/activityPollution_progressBar_progress"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/activityPollution_imageView_factory"
+        android:layout_toStartOf="@+id/activityPollution_persianTextView_pollutionText"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="28dp"
+        android:gravity="center" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityPollution_persianTextView_pollutionData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activityPollution_imageView_factory"
+        android:layout_toStartOf="@+id/activityPollution_persianTextView_pollutionText"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:visibility="invisible" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityPollution_persianTextView_so2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="@string/SO2_text"
+        android:textColor="#4dbbeb"
+        android:textSize="18sp"
+        android:layout_below="@id/activityPollution_persianTextView_pollutionText"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"/>
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityPollution_persianTextView_so2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activityPollution_persianTextView_pollutionText"
+        android:layout_toStartOf="@+id/activityPollution_persianTextView_so2Text"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="#4dbbeb"
+        android:textSize="18sp" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityPollution_persianTextView_O3Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="@string/O3_text"
+        android:textColor="#feb756"
+        android:textSize="18sp"
+        android:layout_below="@id/activityPollution_persianTextView_so2Text"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"/>
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityPollution_persianTextView_O3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activityPollution_persianTextView_so2Text"
+        android:layout_toStartOf="@+id/activityPollution_persianTextView_O3Text"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="#feb756"
+        android:textSize="18sp" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityPollution_persianTextView_dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        android:text="@string/pollution_date_text" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityPollution_persianTextView_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/activityPollution_persianTextView_dateText"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:locale="fa_IR" />
+
+</RelativeLayout>

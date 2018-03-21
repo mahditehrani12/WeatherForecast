@@ -3,6 +3,9 @@
     <string name="app_name">Weather Forecast</string>
     <string name="aboutActivity_title"> About Us </string>
     <string name="NoNetworkActivity_title"> Not Connected ! </string>
+    <string name="pollutionActivity_title"> Pollution </string>
+    <string name="contactActivity_title"> Contact Us </string>
+
     <string name="splash_text"> اپلیکیشن پیش بینی وضعیت آب و هوا </string>
 
     <string name="windDirection"> جهت وزش باد </string>
@@ -13,7 +16,6 @@
     <string name="dailyTempratureRange"> بازه روزانه دما </string>
 
     <string name="noNetworkWarning"> خطا در برقرای ارتباط با سرور ! </string>
-    <string name="receive_pollution"> در حال دریافت اطلاعات ... </string>
     
     <string name="noNetworkWarningButtonText"> بررسی تنظیمات شبکه </string>
     <string name="noNetworkRetryButtonText"> تلاش مجدد </string>
@@ -33,6 +35,10 @@
     <string name="action_about"> درباره اپلیکیشن </string>
     <string name="action_contactMe"> تماس با ما </string>
     <string name="action_pollution"> شاخص آلودگی هوا </string>
+
+    <string name="pollution_date_text"> آخرین بروزرسانی : </string>
+    <string name="SO2_text"> شاخص گاز دی اکسید گوگرد : </string>
+    <string name="O3_text"> شاخص گاز اوزون : </string>
 
     <string name="creator_name"> محمد مهدی تهرانی فخر </string>
     <string name="pollutionText"> شاخص آلودگی هوای تهران : </string>
