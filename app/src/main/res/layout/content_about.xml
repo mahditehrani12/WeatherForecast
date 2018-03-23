@@ -1,22 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
 
-    android:id="@+id/activityContentAbout_linearLayout_linearlayout"
+    android:id="@+id/activityContentAbout_relativeLayout_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="ir.mahdiha.weatherforecast.app.AboutActivity"
-    android:background="@drawable/background_about_activity"
+    android:background="@color/color_background"
     tools:showIn="@layout/activity_about" >
 
-    <ImageView
-        android:id="@+id/activityContentAbout_imageView_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/aboutactivity" />
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityAbout_persianTextView_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/app"
+        android:textSize="32sp"
+        android:textColor="@color/colorWhite" />
 
-</LinearLayout>
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityAbout_persianTextView_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/activityAbout_persianTextView_app"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/water"
+        android:textSize="32sp"
+        android:textColor="#4dbbeb" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityAbout_persianTextView_and"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/activityAbout_persianTextView_water"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/and"
+        android:textSize="32sp"
+        android:textColor="@color/colorWhite" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityAbout_persianTextView_air"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/activityAbout_persianTextView_and"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/air"
+        android:textSize="32sp"
+        android:textColor="#feb756" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityAbout_persianTextView_aboutPart1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activityAbout_persianTextView_app"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:text="@string/about_part1" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityAbout_persianTextView_aboutPart2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activityAbout_persianTextView_aboutPart1"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:text="@string/about_part2" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityAbout_persianTextView_aboutPart3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activityAbout_persianTextView_aboutPart2"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:text="@string/about_part3" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityAbout_persianTextView_writtenBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorWhite"
+        android:text="@string/about_writtenBy" />
+
+    <ImageView
+        android:id="@+id/activityAbout_imageView_heart"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/heart"
+        android:layout_toStartOf="@id/activityAbout_persianTextView_writtenBy" />
+
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityAbout_persianTextView_creator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/activityAbout_imageView_heart"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="12dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorWhite"
+        android:text="@string/creator_name" />
+
+</RelativeLayout>

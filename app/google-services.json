@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "208219191261",
+    "firebase_url": "https://weather-forecast-mahditehrani.firebaseio.com",
+    "project_id": "weather-forecast-mahditehrani",
+    "storage_bucket": "weather-forecast-mahditehrani.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208219191261:android:017478ca64d796e6",
+        "android_client_info": {
+          "package_name": "ir.mahdiha.weatherforecast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208219191261-p19ir73ma37jfrsampd91f0im6c1nqft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYbwcVgfhzGRrVEuEFFLWTJbnizdwNVms"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,13 @@
 package ir.mahdiha.weatherforecast.Forecast;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import ir.mahdiha.weatherforecast.FirebasePushNotification.Config;
 import ir.mahdiha.weatherforecast.Forecast.entity.ApiResponse;
 import ir.mahdiha.weatherforecast.Forecast.entity.List;
 import ir.mahdiha.weatherforecast.R;
@@ -27,6 +31,7 @@ import ir.mahdiha.weatherforecast.app.ContactActivity;
 import ir.mahdiha.weatherforecast.app.PollutionActivity;
 import ir.mahdiha.weatherforecast.helper.ConvertDateHelper;
 import ir.mahdiha.weatherforecast.helper.HelperFunctions;
+import ir.mahdiha.weatherforecast.helper.NotificationUtils;
 import ir.mahdiha.weatherforecast.helper.ScreenSizeUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,12 +47,19 @@ public class ForecastActivity extends AppCompatActivity
     private ForecastListAdapter mForecastListAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
 
+    private BroadcastReceiver mRegistrationBroadcastReceiver;
+
     private String getMorn;
     private String getDay;
     private String getEve;
     private String getNight;
 
     private ArrayList<ForecastListItem> mForecastListItems = new ArrayList<>();
+
+    public ForecastActivity(BroadcastReceiver mRegistrationBroadcastReceiver)
+    {
+        this.mRegistrationBroadcastReceiver = mRegistrationBroadcastReceiver;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -112,6 +124,33 @@ public class ForecastActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+
+        // register GCM registration complete receiver
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                new IntentFilter(Config.REGISTRATION_COMPLETE));
+
+        // register new push message receiver
+        // by doing this, the activity will be notified each time a new message arrives
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                new IntentFilter(Config.PUSH_NOTIFICATION));
+
+        // clear the notification area when the app is opened
+        NotificationUtils.clearNotifications(getApplicationContext());
+
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
+    }
+
 
     private void findViews()
     {

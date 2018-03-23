@@ -40,7 +40,18 @@
     <string name="SO2_text"> شاخص گاز دی اکسید گوگرد : </string>
     <string name="O3_text"> شاخص گاز اوزون : </string>
 
-    <string name="creator_name"> محمد مهدی تهرانی فخر </string>
+    <string name="creator_name"> توسط محمد مهدی تهرانی فخر </string>
     <string name="pollutionText"> شاخص آلودگی هوای تهران : </string>
+
+    <string name="app"> اپلیکیشن </string>
+    <string name="water"> آب </string>
+    <string name="and"> و </string>
+    <string name="air"> هوا </string>
+
+    <string name="about_part1">اپلیکیشن آب و هوا در ابتدا فقط یک اپلیکیشن برای تمرین و یادگیری بود ، اما بعد ها جهت قرار گرفتن در مارکت های اندرویدی تکمیل شد .</string>
+    <string name="about_part2"> این اپلیکیشن اطلاعات مربوط به آب و هوای شهر تهران را در 14 روز آینده پیش بینی میکند و داده های خود را از وبسایت معتبر openWeatherMap دریافت میکند . </string>
+    <string name="about_part3"> همچنین شاخص آلودگی کلان شهر تهران را تشخیص می دهد . این اطلاعات از وبسایت رسمی شاخص آلودگی هوای تهران بدست می آیند و مربوط به ایستگاه شاد آباد در منطقه 18 تهران هستند .</string>
+
+    <string name="about_writtenBy"> نوشته شده با </string>
 
 </resources>
