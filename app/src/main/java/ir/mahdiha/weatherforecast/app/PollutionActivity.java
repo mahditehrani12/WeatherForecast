@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -60,8 +61,7 @@ public class PollutionActivity extends AppCompatActivity
     {
         final PersianTextView pollutionData = (PersianTextView) findViewById(R.id.activityPollution_persianTextView_pollutionData);
         final PersianTextView pollutionDate = (PersianTextView) findViewById(R.id.activityPollution_persianTextView_date);
-        final PersianTextView SO2 = (PersianTextView) findViewById(R.id.activityPollution_persianTextView_so2);
-        final PersianTextView O3 = (PersianTextView) findViewById(R.id.activityPollution_persianTextView_O3);
+        final PersianTextView pollutionURL = (PersianTextView) findViewById(R.id.activityPollution_persianTextView_url);
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.activityPollution_progressBar_progress);
 
@@ -81,6 +81,8 @@ public class PollutionActivity extends AppCompatActivity
                 PollutionResponse pollutionResponse = response.body();
                 assert pollutionResponse != null;
 
+                Log.e("TAG_DEBUG" , pollutionResponse.getStatus());
+
                 progressBar.setVisibility(View.INVISIBLE);
                 progressBar.startAnimation(animationFadeOut);
 
@@ -89,8 +91,7 @@ public class PollutionActivity extends AppCompatActivity
                 pollutionData.setText( String.valueOf (pollutionResponse.getData().getAqi()) );
 
                 pollutionDate.setText(pollutionResponse.getData().getTime().getS());
-                SO2.setText( String.valueOf(pollutionResponse.getData().getIaqi().getSo2().getV() ));
-                O3.setText( String.valueOf(pollutionResponse.getData().getIaqi().getO3().getV() ));
+                pollutionURL.setText(pollutionResponse.getData().getAttributions().get(0).getUrl());
 
             }
 

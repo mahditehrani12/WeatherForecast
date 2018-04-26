@@ -41,6 +41,6 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService
         SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
         SharedPreferences.Editor editor = pref.edit();
         editor.putString("regId", token);
-        editor.commit();
+        editor.apply();
     }
 }

@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -56,16 +58,22 @@ public class ForecastActivity extends AppCompatActivity
 
     private ArrayList<ForecastListItem> mForecastListItems = new ArrayList<>();
 
-    public ForecastActivity(BroadcastReceiver mRegistrationBroadcastReceiver)
-    {
-        this.mRegistrationBroadcastReceiver = mRegistrationBroadcastReceiver;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forecast);
+
+        mRegistrationBroadcastReceiver = new BroadcastReceiver()
+        {
+            @Override
+            public void onReceive(Context context, Intent intent)
+            {
+                if (Objects.equals(intent.getAction(), Config.REGISTRATION_COMPLETE)) {
+                    FirebaseMessaging.getInstance().subscribeToTopic(Config.TOPIC_GLOBAL);
+                }
+            }
+        };
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.activityForecast_ToolBar_toolbar);
         setSupportActionBar(toolbar);
@@ -141,7 +149,6 @@ public class ForecastActivity extends AppCompatActivity
 
         // clear the notification area when the app is opened
         NotificationUtils.clearNotifications(getApplicationContext());
-
     }
 
     @Override

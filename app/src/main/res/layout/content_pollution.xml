@@ -59,50 +59,16 @@
         android:visibility="invisible" />
 
     <ir.mahdiha.weatherforecast.customviews.PersianTextView
-        android:id="@+id/activityPollution_persianTextView_so2Text"
-        android:layout_width="wrap_content"
+        android:id="@+id/activityPollution_persianTextView_url"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:text="@string/SO2_text"
         android:textColor="#4dbbeb"
-        android:textSize="18sp"
+        android:textSize="24sp"
+        android:layout_alignParentStart="true"
         android:layout_below="@id/activityPollution_persianTextView_pollutionText"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="16dp"/>
-
-    <ir.mahdiha.weatherforecast.customviews.PersianTextView
-        android:id="@+id/activityPollution_persianTextView_so2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/activityPollution_persianTextView_pollutionText"
-        android:layout_toStartOf="@+id/activityPollution_persianTextView_so2Text"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
-        android:textColor="#4dbbeb"
-        android:textSize="18sp" />
-
-    <ir.mahdiha.weatherforecast.customviews.PersianTextView
-        android:id="@+id/activityPollution_persianTextView_O3Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:text="@string/O3_text"
-        android:textColor="#feb756"
-        android:textSize="18sp"
-        android:layout_below="@id/activityPollution_persianTextView_so2Text"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"/>
-
-    <ir.mahdiha.weatherforecast.customviews.PersianTextView
-        android:id="@+id/activityPollution_persianTextView_O3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/activityPollution_persianTextView_so2Text"
-        android:layout_toStartOf="@+id/activityPollution_persianTextView_O3Text"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="#feb756"
-        android:textSize="18sp" />
+        android:layout_marginStart="16dp" />
 
     <ir.mahdiha.weatherforecast.customviews.PersianTextView
         android:id="@+id/activityPollution_persianTextView_dateText"

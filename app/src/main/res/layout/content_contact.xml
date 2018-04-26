@@ -10,4 +10,60 @@
     android:background="@color/color_background"
     tools:showIn="@layout/activity_contact">
 
+    <ir.mahdiha.weatherforecast.customviews.PersianTextView
+        android:id="@+id/activityContact_persianTextView_contactText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
+        android:text="@string/contact_text" />
+
+    <RelativeLayout
+        android:layout_below="@id/activityContact_persianTextView_contactText"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/activityContact_imageView_email"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_email_white_48dp" />
+
+        <ir.mahdiha.weatherforecast.customviews.PersianTextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:layout_marginStart="55dp"
+            android:text="@string/creator_email"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/activityContact_imageView_email"
+            android:src="@drawable/ic_phone_white_48dp" />
+
+        <ir.mahdiha.weatherforecast.customviews.PersianTextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/activityContact_imageView_email"
+            android:text="@string/creator_number"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
 </RelativeLayout>

@@ -41,6 +41,9 @@
     <string name="O3_text"> شاخص گاز اوزون : </string>
 
     <string name="creator_name"> توسط محمد مهدی تهرانی فخر </string>
+    <string name="creator_email"> mahditehrani12@gmail.com </string>
+    <string name="creator_number"> +98 903 053 6985 </string>
+
     <string name="pollutionText"> شاخص آلودگی هوای تهران : </string>
 
     <string name="app"> اپلیکیشن </string>
@@ -53,5 +56,7 @@
     <string name="about_part3"> همچنین شاخص آلودگی کلان شهر تهران را تشخیص می دهد . این اطلاعات از وبسایت رسمی شاخص آلودگی هوای تهران بدست می آیند و مربوط به ایستگاه شاد آباد در منطقه 18 تهران هستند .</string>
 
     <string name="about_writtenBy"> نوشته شده با </string>
+
+    <string name="contact_text"> در صورتی که در هر یک از قسمت های برنامه دچار مشکل شدید ، از طریق راه های زیر مشکل خود را برای ما ارسال کنید . ما تمامی موارد را مطالعه کرده و در سریعترین زمان ممکن به آن رسیدگی میکنیم. </string>
 
 </resources>
